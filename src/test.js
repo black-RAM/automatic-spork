@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "."
+import { capitalize, reverseString, calculator, caesarCipher } from "."
 
 test("capitalize('tERmInal') returns 'Terminal'.", () => {
   expect(capitalize("tERmInal")).toBe("Terminal")
@@ -21,3 +21,11 @@ for (const func of driver) {
     expect(calculator[func.name](a, b)).toBe(func.return)
   })
 }
+
+test("caesarCipher('the quick brown fox jumps over the lazy dog') returns 'gur dhvpx oebja sbk whzcf bire gur ynml qbt'.", () => {
+  expect(caesarCipher("the quick brown fox jumps over the lazy dog")).toMatch(/gur dhvpx oebja sbk whzcf bire gur ynml qbt/)
+})
+
+test("ceaserCipher('Hello, World!') returns 'Uryyb, Jbeyq!'", () => {
+  expect(caesarCipher("Hello, World!")).toMatch(/Uryyb, Jbeyq!/)
+})
