@@ -27,6 +27,15 @@ function caesarCipher(input) {
   return output
 }
 
+function analyzeArray(arr) {
+  const length = arr.length
+  const average = arr.reduce((sum, current) => sum + current) / length
+  const min = Math.min(...arr)
+  const max = Math.max(...arr)
+
+  return {average, min, max, length }
+}
+
 const calculator = {
   add: (a, b) => a + b,
   subtract: (a, b) => a - b,
@@ -34,4 +43,4 @@ const calculator = {
   divide: (a, b) => a / b
 }
 
-export {capitalize, reverseString, caesarCipher, calculator}
+export {capitalize, reverseString, caesarCipher, analyzeArray, calculator}
